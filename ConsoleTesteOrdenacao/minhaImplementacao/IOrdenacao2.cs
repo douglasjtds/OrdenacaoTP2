@@ -8,9 +8,10 @@ namespace ConsoleTesteOrdenacao.minhaImplementacao
 {
     public interface IOrdenacao2
     {
-        void Selecao(int[] vetor);
-        void Insercao(int[] vetor);
+        void BubbleSort(int[] vetor);
+        void InsertionSort(int[] vetor); //Insercao
+        void SelectionSort(int[] vetor);//Selecao
         void Shellsort(int[] vetor);
-        //void Heapsort(Item[] v, int n);
+        //void QuickSort(Item[] v, int n);
     }
 }
