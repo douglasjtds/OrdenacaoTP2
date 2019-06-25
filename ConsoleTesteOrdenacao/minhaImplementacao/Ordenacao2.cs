@@ -108,5 +108,10 @@ namespace ConsoleTesteOrdenacao.minhaImplementacao
             }
             Thread.Sleep(4000);
         }
+
+        public void BubbleSort(int[] vetor)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
