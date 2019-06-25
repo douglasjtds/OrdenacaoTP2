@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -11,6 +12,7 @@ namespace ConsoleTesteOrdenacao.minhaImplementacao
     {
         public void Selecao(int[] vetor)
         {
+    
             for (int valorFixo = 0; valorFixo < vetor.Length - 1; valorFixo++)
             {
                 int menor = valorFixo;
@@ -42,6 +44,10 @@ namespace ConsoleTesteOrdenacao.minhaImplementacao
 
         public void Insercao(int[] vetor)
         {
+            var stopWatch = new Stopwatch();
+
+            stopWatch.Start();
+
             int j, key, i;
 
             for (j = 1; j < vetor.Length; j++)
@@ -61,6 +67,9 @@ namespace ConsoleTesteOrdenacao.minhaImplementacao
             {
                 Console.WriteLine(vetor[k]);
             }
+
+            stopWatch.Stop();
+            Console.Write("\nTempo total levado para o cálculo:  {0} milisegundos", stopWatch.ElapsedMilliseconds); //System.currentTimeMillis()
             Thread.Sleep(4000);
         }
 

@@ -43,10 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="minhaImplementacao\IOrdenacao2.cs" />
     <Compile Include="Interfaces\IOrdenacao.cs" />
     <Compile Include="Interfaces\Item.cs" />
     <Compile Include="MeuItem.cs" />
+    <Compile Include="minhaImplementacao\Quicksort.cs" />
     <Compile Include="Ordenacao.cs" />
+    <Compile Include="minhaImplementacao\Ordenacao2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
