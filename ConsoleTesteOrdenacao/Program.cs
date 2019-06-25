@@ -29,7 +29,7 @@ namespace OrdenacaoTP2
 
             Ordenacao2 ordenacao = new Ordenacao2();
 
-            ordenacao.Insercao(vetorTeste);
+            ordenacao.InsertionSort(vetorTeste);
 
         }
     }

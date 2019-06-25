@@ -10,7 +10,7 @@ namespace ConsoleTesteOrdenacao.minhaImplementacao
 {
     public class Ordenacao2 : IOrdenacao2
     {
-        public void Selecao(int[] vetor)
+        public void SelectionSort(int[] vetor)
         {
     
             for (int valorFixo = 0; valorFixo < vetor.Length - 1; valorFixo++)
@@ -42,7 +42,7 @@ namespace ConsoleTesteOrdenacao.minhaImplementacao
             Thread.Sleep(4000);
         }
 
-        public void Insercao(int[] vetor)
+        public void InsertionSort(int[] vetor)
         {
             var stopWatch = new Stopwatch();
 
