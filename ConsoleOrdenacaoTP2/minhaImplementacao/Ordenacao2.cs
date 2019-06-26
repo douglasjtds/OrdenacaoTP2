@@ -63,6 +63,7 @@ namespace ConsoleOrdenacaoTP2.minhaImplementacao
             }
 
             //para imprimir
+            Console.WriteLine("\nO vetor ordenado é o seguinte: ");
             for (int k = 0; k < vetor.Length; k++)
             {
                 Console.WriteLine(vetor[k]);

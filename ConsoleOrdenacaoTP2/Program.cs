@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace OrdenacaoTP2
@@ -10,18 +11,35 @@ namespace OrdenacaoTP2
     public class Program
     {
         private static Ordenacao2 ordenacao;
-        //private static Quicksort quicksort;
+        private static Quicksort quicksort;
 
-        public int[] vetorTeste;
+        public static int[] vetorDeElementosAleatorios;
+        public static int tamanhoVetor;
 
         static void Main(string[] args)
         {
             //int[] vetorTeste = { 2, 5, 4, 3, 1, 0 };
 
             Console.Write("Entre com o tamanho do vetor a ser gerado: ");
-            int tamanhoVetor = Int32.Parse(Console.ReadLine());
+            tamanhoVetor = Int32.Parse(Console.ReadLine());
 
-             int[] vetorTeste = new int[tamanhoVetor]; //vetor teste precisa ser variável global, mas não tá permitindo, pq?
+            vetorDeElementosAleatorios = new int[tamanhoVetor];
+
+
+            var numerosNoVetor = new Random();
+
+            for (int i = 0; i < tamanhoVetor; i++)
+            {
+                vetorDeElementosAleatorios[i] = numerosNoVetor.Next(0, tamanhoVetor);
+            }
+
+            //para imprimir o vetor desordenado
+            Console.WriteLine("\nO vetor gerado sem ordenação é o seguinte: ");
+            for (int k = 0; k < vetorDeElementosAleatorios.Length; k++)
+            {
+                Console.WriteLine(vetorDeElementosAleatorios[k]);
+            }
+            Thread.Sleep(4000);
 
             #region [Escolha o método de ordenação que deseja utilizar]
             int metodoDeOrdenacao;
@@ -46,19 +64,19 @@ namespace OrdenacaoTP2
                 switch (metodoDeOrdenacao)
                 {
                     case 1:
-                        BubbleSort();
+                        BubbleSort(vetorDeElementosAleatorios);
                         break;
                     case 2:
-                        InsertionSort();
+                        InsertionSort(vetorDeElementosAleatorios);
                         break;
                     case 3:
-                        SelectionSort();
+                        SelectionSort(vetorDeElementosAleatorios);
                         break;
                     case 4:
-                        ShellSort();
+                        ShellSort(vetorDeElementosAleatorios);
                         break;
                     case 5:
-                        QuickSort();
+                        QuickSort(vetorDeElementosAleatorios);
                         break;
                     default:
                         SaiPrograma();
@@ -67,48 +85,32 @@ namespace OrdenacaoTP2
 
             } while (metodoDeOrdenacao != 0);
             #endregion
-
-            var numerosNoVetor = new Random();
-
-            for (int i = 0; i < tamanhoVetor; i++)
-            {
-                vetorTeste[i] = numerosNoVetor.Next(0, tamanhoVetor);
-            }
-
-            ordenacao = new Ordenacao2();
-
-            ordenacao.InsertionSort(vetorTeste);
-
         }
-
 
         #region Chamadas dos métodos de ordenação
-        private static void BubbleSort()
+        private static void BubbleSort(int[] vetorRecebido)
         {
-            throw new NotImplementedException();
+            ordenacao.BubbleSort(vetorDeElementosAleatorios);
         }
 
-        private static void InsertionSort()
+        private static void InsertionSort(int[] vetorRecebido)
         {
-            throw new NotImplementedException();
-            //ordenacao = new Ordenacao2();
-
-            //ordenacao.InsertionSort(vetorTeste);
+            ordenacao.InsertionSort(vetorDeElementosAleatorios);
         }
 
-        private static void SelectionSort()
+        private static void SelectionSort(int[] vetorRecebido)
         {
-            throw new NotImplementedException();
+            ordenacao.SelectionSort(vetorDeElementosAleatorios);
         }
 
-        private static void ShellSort()
+        private static void ShellSort(int[] vetorRecebido)
         {
-            throw new NotImplementedException();
+            ordenacao.Shellsort(vetorDeElementosAleatorios);
         }
 
-        private static void QuickSort()
+        private static void QuickSort(int[] vetorRecebido)
         {
-            throw new NotImplementedException();
+            quicksort.Ordena(vetorDeElementosAleatorios, 0, tamanhoVetor - 1);
         }
         #endregion
 
