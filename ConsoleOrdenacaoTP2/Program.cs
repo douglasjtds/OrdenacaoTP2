@@ -90,26 +90,31 @@ namespace OrdenacaoTP2
         #region Chamadas dos métodos de ordenação
         private static void BubbleSort(int[] vetorRecebido)
         {
+            ordenacao = new Ordenacao2();
             ordenacao.BubbleSort(vetorDeElementosAleatorios);
         }
 
         private static void InsertionSort(int[] vetorRecebido)
         {
+            ordenacao = new Ordenacao2();
             ordenacao.InsertionSort(vetorDeElementosAleatorios);
         }
 
         private static void SelectionSort(int[] vetorRecebido)
         {
+            ordenacao = new Ordenacao2();
             ordenacao.SelectionSort(vetorDeElementosAleatorios);
         }
 
         private static void ShellSort(int[] vetorRecebido)
         {
+            ordenacao = new Ordenacao2();
             ordenacao.Shellsort(vetorDeElementosAleatorios);
         }
 
         private static void QuickSort(int[] vetorRecebido)
         {
+            ordenacao = new Ordenacao2();
             quicksort.Ordena(vetorDeElementosAleatorios, 0, tamanhoVetor - 1);
         }
         #endregion

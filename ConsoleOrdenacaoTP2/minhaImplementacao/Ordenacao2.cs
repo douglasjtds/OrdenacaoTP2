@@ -12,7 +12,9 @@ namespace ConsoleOrdenacaoTP2.minhaImplementacao
     {
         public void SelectionSort(int[] vetor)
         {
-    
+            var stopWatch = new Stopwatch();
+            stopWatch.Start();
+
             for (int valorFixo = 0; valorFixo < vetor.Length - 1; valorFixo++)
             {
                 int menor = valorFixo;
@@ -39,13 +41,15 @@ namespace ConsoleOrdenacaoTP2.minhaImplementacao
             {
                 Console.WriteLine(vetor[k]);
             }
+
+            stopWatch.Stop();
+            Console.Write("\nTempo total levado para o cálculo:  {0} milisegundos", stopWatch.ElapsedMilliseconds); //System.currentTimeMillis()
             Thread.Sleep(4000);
         }
 
         public void InsertionSort(int[] vetor)
         {
             var stopWatch = new Stopwatch();
-
             stopWatch.Start();
 
             int j, key, i;
@@ -76,6 +80,9 @@ namespace ConsoleOrdenacaoTP2.minhaImplementacao
 
         public void Shellsort(int[] vetor)
         {
+            var stopWatch = new Stopwatch();
+            stopWatch.Start();
+
             int i, j, h = 1, value;
 
             do
@@ -107,12 +114,22 @@ namespace ConsoleOrdenacaoTP2.minhaImplementacao
             {
                 Console.WriteLine(vetor[k]);
             }
+
+            stopWatch.Stop();
+            Console.Write("\nTempo total levado para o cálculo:  {0} milisegundos", stopWatch.ElapsedMilliseconds); //System.currentTimeMillis()
             Thread.Sleep(4000);
         }
 
         public void BubbleSort(int[] vetor)
         {
+            //var stopWatch = new Stopwatch();
+            //stopWatch.Start();
+
             throw new NotImplementedException();
+
+            //stopWatch.Stop();
+            //Console.Write("\nTempo total levado para o cálculo:  {0} milisegundos", stopWatch.ElapsedMilliseconds); //System.currentTimeMillis()
+            //Thread.Sleep(4000);
         }
     }
 }
