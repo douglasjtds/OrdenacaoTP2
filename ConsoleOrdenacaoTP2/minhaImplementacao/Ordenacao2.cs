@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ConsoleTesteOrdenacao.minhaImplementacao
+namespace ConsoleOrdenacaoTP2.minhaImplementacao
 {
     public class Ordenacao2 : IOrdenacao2
     {

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdenacaoTP2", "ConsoleTesteOrdenacao\OrdenacaoTP2.csproj", "{278D9464-3679-4ED2-AE52-3364DB9DC88D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdenacaoTP2", "ConsoleOrdenacaoTP2\OrdenacaoTP2.csproj", "{278D9464-3679-4ED2-AE52-3364DB9DC88D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

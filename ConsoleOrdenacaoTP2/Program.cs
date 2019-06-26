@@ -1,4 +1,4 @@
-﻿using ConsoleTesteOrdenacao.minhaImplementacao;
+﻿using ConsoleOrdenacaoTP2.minhaImplementacao;
 using System;
 using System.Collections.Generic;
 using System.Linq;

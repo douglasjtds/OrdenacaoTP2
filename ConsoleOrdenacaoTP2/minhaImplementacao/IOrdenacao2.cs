@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleTesteOrdenacao.minhaImplementacao
+namespace ConsoleOrdenacaoTP2.minhaImplementacao
 {
     public interface IOrdenacao2
     {
