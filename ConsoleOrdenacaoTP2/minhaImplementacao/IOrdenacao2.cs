@@ -12,6 +12,5 @@ namespace ConsoleOrdenacaoTP2.minhaImplementacao
         void InsertionSort(int[] vetor); //Insercao
         void SelectionSort(int[] vetor);//Selecao
         void Shellsort(int[] vetor);
-        //void QuickSort(Item[] v, int n);
     }
 }

@@ -39,10 +39,11 @@ namespace ConsoleOrdenacaoTP2.minhaImplementacao
             //para imprimir
             for (int k = 0; k < vetor.Length; k++)
             {
-                Console.WriteLine(vetor[k]);
+                Console.WriteLine("\t" + vetor[k]);
             }
 
             stopWatch.Stop();
+            Console.ReadKey();
             Console.Write("\nTempo total levado para o cálculo:  {0} milisegundos", stopWatch.ElapsedMilliseconds); //System.currentTimeMillis()
             Thread.Sleep(4000);
         }
@@ -70,10 +71,11 @@ namespace ConsoleOrdenacaoTP2.minhaImplementacao
             Console.WriteLine("\nO vetor ordenado é o seguinte: ");
             for (int k = 0; k < vetor.Length; k++)
             {
-                Console.WriteLine(vetor[k]);
+                Console.WriteLine("\t" + vetor[k]);
             }
 
             stopWatch.Stop();
+            Console.ReadKey();
             Console.Write("\nTempo total levado para o cálculo:  {0} milisegundos", stopWatch.ElapsedMilliseconds); //System.currentTimeMillis()
             Thread.Sleep(4000);
         }
@@ -112,24 +114,46 @@ namespace ConsoleOrdenacaoTP2.minhaImplementacao
             //para imprimir
             for (int k = 0; k < vetor.Length; k++)
             {
-                Console.WriteLine(vetor[k]);
+                Console.WriteLine("\t" + vetor[k]);
             }
 
             stopWatch.Stop();
+            Console.ReadKey();
             Console.Write("\nTempo total levado para o cálculo:  {0} milisegundos", stopWatch.ElapsedMilliseconds); //System.currentTimeMillis()
             Thread.Sleep(4000);
         }
 
         public void BubbleSort(int[] vetor)
         {
-            //var stopWatch = new Stopwatch();
-            //stopWatch.Start();
+            var stopWatch = new Stopwatch();
+            stopWatch.Start();
 
-            throw new NotImplementedException();
+            int temp = 0;
 
-            //stopWatch.Stop();
-            //Console.Write("\nTempo total levado para o cálculo:  {0} milisegundos", stopWatch.ElapsedMilliseconds); //System.currentTimeMillis()
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                for (int sort = 0; sort < vetor.Length - 1; sort++)
+                {
+                    if (vetor[sort] > vetor[sort + 1])
+                    {
+                        temp = vetor[sort + 1];
+                        vetor[sort + 1] = vetor[sort];
+                        vetor[sort] = temp;
+                    }
+                }
+            }
+
+            //para imprimir
+            for (int k = 0; k < vetor.Length; k++)
+                Console.WriteLine("\t" + vetor[k]);
+
+            stopWatch.Stop();
+
+            Console.ReadKey();
+
+            Console.Write("\nTempo total levado para o cálculo:  {0} milisegundos", stopWatch.ElapsedMilliseconds); //System.currentTimeMillis()
             //Thread.Sleep(4000);
+            Console.ReadKey();
         }
     }
 }

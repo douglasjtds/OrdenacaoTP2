@@ -37,16 +37,21 @@ namespace OrdenacaoTP2
             Console.WriteLine("\nO vetor gerado sem ordenação é o seguinte: ");
             for (int k = 0; k < vetorDeElementosAleatorios.Length; k++)
             {
-                Console.WriteLine(vetorDeElementosAleatorios[k]);
+                Console.WriteLine("\t" + vetorDeElementosAleatorios[k]);
             }
-            Thread.Sleep(4000);
+            //Thread.Sleep(4000);
 
-            #region [Escolha o método de ordenação que deseja utilizar]
+            Console.WriteLine("\n");
+            Console.WriteLine("Pressione enter para continuar.");
+            Console.ReadKey();
+
+            #region [MENU - Escolha o método de ordenação que deseja utilizar]
             int metodoDeOrdenacao;
 
             do
             {
-                Console.Clear();
+                Console.WriteLine("\n");
+                //Console.Clear();
                 Console.WriteLine("------[Trabalho de AEDs - TP2 - Ordenação]------");
                 Console.WriteLine("\n");
                 Console.WriteLine("[ 1 ] BubbleSort");
@@ -92,30 +97,40 @@ namespace OrdenacaoTP2
         {
             ordenacao = new Ordenacao2();
             ordenacao.BubbleSort(vetorDeElementosAleatorios);
+
+            Console.Clear();
         }
 
         private static void InsertionSort(int[] vetorRecebido)
         {
             ordenacao = new Ordenacao2();
             ordenacao.InsertionSort(vetorDeElementosAleatorios);
+
+            Console.Clear();
         }
 
         private static void SelectionSort(int[] vetorRecebido)
         {
             ordenacao = new Ordenacao2();
             ordenacao.SelectionSort(vetorDeElementosAleatorios);
+
+            Console.Clear();
         }
 
         private static void ShellSort(int[] vetorRecebido)
         {
             ordenacao = new Ordenacao2();
             ordenacao.Shellsort(vetorDeElementosAleatorios);
+
+            Console.Clear();
         }
 
         private static void QuickSort(int[] vetorRecebido)
         {
             ordenacao = new Ordenacao2();
             quicksort.Ordena(vetorDeElementosAleatorios, 0, tamanhoVetor - 1);
+
+            Console.Clear();
         }
         #endregion
 
