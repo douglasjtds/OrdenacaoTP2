@@ -127,7 +127,8 @@ namespace OrdenacaoTP2
 
         private static void QuickSort(int[] vetorRecebido)
         {
-            ordenacao = new Ordenacao2();
+            //ordenacao = new Ordenacao2();
+            quicksort = new Quicksort();
             quicksort.Ordena(vetorDeElementosAleatorios, 0, tamanhoVetor - 1);
 
             Console.Clear();
