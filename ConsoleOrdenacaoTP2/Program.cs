@@ -25,7 +25,6 @@ namespace OrdenacaoTP2
 
             vetorDeElementosAleatorios = new int[tamanhoVetor];
 
-
             var numerosNoVetor = new Random();
 
             for (int i = 0; i < tamanhoVetor; i++)

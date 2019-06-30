@@ -49,7 +49,6 @@ namespace ConsoleOrdenacaoTP2.minhaImplementacao
 
         public void Imprimir(int[] vetor)
         {
-            //para imprimir
             for (int k = 0; k < vetor.Length; k++)
             {
                 Console.WriteLine(vetor[k]);

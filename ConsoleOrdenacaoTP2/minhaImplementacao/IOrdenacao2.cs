@@ -10,7 +10,7 @@ namespace ConsoleOrdenacaoTP2.minhaImplementacao
     {
         void BubbleSort(int[] vetor);
         void InsertionSort(int[] vetor); //Insercao
-        void SelectionSort(int[] vetor);//Selecao
+        void SelectionSort(int[] vetor); //Selecao
         void Shellsort(int[] vetor);
     }
 }
