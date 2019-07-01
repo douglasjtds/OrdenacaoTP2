@@ -10,8 +10,14 @@ namespace ConsoleOrdenacaoTP2.minhaImplementacao
 {
     public class Ordenacao2 : IOrdenacao2
     {
+        public static int numeroDeComparacoes;
+        public static int numeroDeAtribuicoes;
+
         public void SelectionSort(int[] vetor)
         {
+            numeroDeComparacoes = 0;
+            numeroDeAtribuicoes = 0;
+
             var stopWatch = new Stopwatch();
             stopWatch.Start();
 
@@ -25,6 +31,7 @@ namespace ConsoleOrdenacaoTP2.minhaImplementacao
                     if (vetor[i] < vetor[menor])
                     {
                         menor = i;
+                        numeroDeComparacoes++;
                     }
                 }
 
@@ -33,6 +40,7 @@ namespace ConsoleOrdenacaoTP2.minhaImplementacao
                     int t = vetor[valorFixo];
                     vetor[valorFixo] = vetor[menor];
                     vetor[menor] = t;
+                    numeroDeAtribuicoes++;
                 }
 
             }
@@ -45,11 +53,17 @@ namespace ConsoleOrdenacaoTP2.minhaImplementacao
             stopWatch.Stop();
             Console.ReadKey();
             Console.Write("\nTempo total levado para o cálculo:  {0} milisegundos", stopWatch.ElapsedMilliseconds); //System.currentTimeMillis()
-            Thread.Sleep(4000);
+            Console.Write("\nO número de comparações é: {0}", numeroDeComparacoes);
+            Console.Write("\nO número de atribuições é: {0}", numeroDeAtribuicoes);
+            Console.ReadKey();
+            //Thread.Sleep(4000);
         }
 
         public void InsertionSort(int[] vetor)
         {
+            numeroDeComparacoes = 0;
+            numeroDeAtribuicoes = 0;
+
             var stopWatch = new Stopwatch();
             stopWatch.Start();
 
@@ -62,9 +76,11 @@ namespace ConsoleOrdenacaoTP2.minhaImplementacao
                 for (i = j - 1; (i >= 0) && (vetor[i] > key); i--)
                 {
                     vetor[i + 1] = vetor[i];
+                    numeroDeComparacoes++;
                 }
 
                 vetor[i + 1] = key;
+                numeroDeAtribuicoes++;
             }
 
             //para imprimir
@@ -77,11 +93,17 @@ namespace ConsoleOrdenacaoTP2.minhaImplementacao
             stopWatch.Stop();
             Console.ReadKey();
             Console.Write("\nTempo total levado para o cálculo:  {0} milisegundos", stopWatch.ElapsedMilliseconds); //System.currentTimeMillis()
-            Thread.Sleep(4000);
+            Console.Write("\nO número de comparações é: {0}", numeroDeComparacoes);
+            Console.Write("\nO número de atribuições é: {0}", numeroDeAtribuicoes);
+            Console.ReadKey();
+            //Thread.Sleep(4000);
         }
 
         public void Shellsort(int[] vetor)
         {
+            numeroDeComparacoes = 0;
+            numeroDeAtribuicoes = 0;
+
             var stopWatch = new Stopwatch();
             stopWatch.Start();
 
@@ -105,9 +127,11 @@ namespace ConsoleOrdenacaoTP2.minhaImplementacao
                     {
                         vetor[j + h] = vetor[j];
                         j = j - h;
+                        numeroDeComparacoes++;
                     }
 
                     vetor[j + h] = value;
+                    numeroDeAtribuicoes++;
                 }
             } while (h > 1);
 
@@ -120,11 +144,17 @@ namespace ConsoleOrdenacaoTP2.minhaImplementacao
             stopWatch.Stop();
             Console.ReadKey();
             Console.Write("\nTempo total levado para o cálculo:  {0} milisegundos", stopWatch.ElapsedMilliseconds); //System.currentTimeMillis()
-            Thread.Sleep(4000);
+            Console.Write("\nO número de comparações é: {0}", numeroDeComparacoes);
+            Console.Write("\nO número de atribuições é: {0}", numeroDeAtribuicoes);
+            Console.ReadKey();
+            //Thread.Sleep(4000);
         }
 
         public void BubbleSort(int[] vetor)
         {
+            numeroDeComparacoes = 0;
+            numeroDeAtribuicoes = 0;
+
             var stopWatch = new Stopwatch();
             stopWatch.Start();
 
@@ -136,9 +166,11 @@ namespace ConsoleOrdenacaoTP2.minhaImplementacao
                 {
                     if (vetor[sort] > vetor[sort + 1])
                     {
+                        numeroDeComparacoes++;
                         temp = vetor[sort + 1];
                         vetor[sort + 1] = vetor[sort];
                         vetor[sort] = temp;
+                        numeroDeAtribuicoes++;
                     }
                 }
             }
@@ -152,6 +184,8 @@ namespace ConsoleOrdenacaoTP2.minhaImplementacao
             Console.ReadKey();
 
             Console.Write("\nTempo total levado para o cálculo:  {0} milisegundos", stopWatch.ElapsedMilliseconds); //System.currentTimeMillis()
+            Console.Write("\nO número de comparações é: {0}", numeroDeComparacoes);
+            Console.Write("\nO número de atribuições é: {0}", numeroDeAtribuicoes);
             //Thread.Sleep(4000);
             Console.ReadKey();
         }
