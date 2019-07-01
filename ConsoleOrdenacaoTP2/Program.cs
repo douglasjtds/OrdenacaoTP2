@@ -14,6 +14,7 @@ namespace OrdenacaoTP2
         private static Quicksort quicksort;
 
         public static int[] vetorDeElementosAleatorios;
+        public static int[] vetorDeElementosSemRepeticao;
         public static int tamanhoVetor;
 
         static void Main(string[] args)
@@ -23,39 +24,61 @@ namespace OrdenacaoTP2
             Console.Write("Entre com o tamanho do vetor a ser gerado: ");
             tamanhoVetor = Int32.Parse(Console.ReadLine());
 
-            vetorDeElementosAleatorios = new int[tamanhoVetor];
 
-            var numerosNoVetor = new Random();
+            #region Gerar vetor aleatório com repetição com repetição
+            //vetorDeElementosAleatorios = new int[tamanhoVetor];
 
-            for (int i = 0; i < tamanhoVetor; i++)
+            //var numerosNoVetor = new Random();
+
+            //for (int i = 0; i < tamanhoVetor; i++)
+            //{
+            //    vetorDeElementosAleatorios[i] = numerosNoVetor.Next(0, tamanhoVetor);
+            //}
+
+            ////para imprimir o vetor desordenado com repetição
+            //Console.WriteLine("\nO vetor gerado sem ordenação e com números repetidos é o seguinte: ");
+            //for (int k = 0; k < vetorDeElementosAleatorios.Length; k++)
+            //{
+            //    Console.WriteLine("\t" + vetorDeElementosAleatorios[k]);
+            //} 
+            #endregion
+
+
+            #region Vetor sem repetição
+
+            vetorDeElementosSemRepeticao = new int[tamanhoVetor];
+
+            var numerosNoVetorSemRepeticao = new Random();
+
+            int numeroQueVaiEntrarNoVetor;
+
+            var contador = 0;
+            var numeroMaximo = Convert.ToInt32(tamanhoVetor * 1.8);
+
+            do
             {
-                vetorDeElementosAleatorios[i] = numerosNoVetor.Next(0, tamanhoVetor);
-                //vetorDeElementosAleatorios.Contains() ///////////////////////////
-                /*try this: 
-                 * 
-                 * https://stackoverflow.com/questions/30014901/generating-random-numbers-without-repeating-c
-                 * 
-                 * 
-                 * 
-                 * List<int> listNumbers = new List<int>();
-                    int number;
-                    for (int i = 0; i < 6; i++)
-                    {
-                      do {
-                         number = rand.Next(1, 49);
-                      } while (listNumbers.Contains(number));
-                      listNumbers.Add(number);
-                    }
-                 */
+                numeroQueVaiEntrarNoVetor = numerosNoVetorSemRepeticao.Next(0, numeroMaximo);
+
+                if (!vetorDeElementosSemRepeticao.Contains(numeroQueVaiEntrarNoVetor))
+                {
+                    vetorDeElementosSemRepeticao[contador] = numeroQueVaiEntrarNoVetor;
+                    contador++;
+                }
+            } while (contador < tamanhoVetor);
+
+            //for (int i = 0; i < tamanhoVetor; i++)
+            //{
+            //}
+
+            //para imprimir o vetor desordenado sem repetição
+            Console.WriteLine("\nO vetor gerado sem ordenação e sem números repetidos é o seguinte: ");
+            for (int k = 0; k < vetorDeElementosSemRepeticao.Length; k++)
+            {
+                Console.WriteLine("\t" + vetorDeElementosSemRepeticao[k]);
             }
 
-            //para imprimir o vetor desordenado
-            Console.WriteLine("\nO vetor gerado sem ordenação é o seguinte: ");
-            for (int k = 0; k < vetorDeElementosAleatorios.Length; k++)
-            {
-                Console.WriteLine("\t" + vetorDeElementosAleatorios[k]);
-            }
-            //Thread.Sleep(4000);
+            #endregion
+
 
             Console.WriteLine("\n");
             Console.WriteLine("Pressione enter para continuar.");
@@ -85,19 +108,19 @@ namespace OrdenacaoTP2
                 switch (metodoDeOrdenacao)
                 {
                     case 1:
-                        BubbleSort(vetorDeElementosAleatorios);
+                        BubbleSort(vetorDeElementosSemRepeticao);
                         break;
                     case 2:
-                        InsertionSort(vetorDeElementosAleatorios);
+                        InsertionSort(vetorDeElementosSemRepeticao);
                         break;
                     case 3:
-                        SelectionSort(vetorDeElementosAleatorios);
+                        SelectionSort(vetorDeElementosSemRepeticao);
                         break;
                     case 4:
-                        ShellSort(vetorDeElementosAleatorios);
+                        ShellSort(vetorDeElementosSemRepeticao);
                         break;
                     case 5:
-                        QuickSort(vetorDeElementosAleatorios);
+                        QuickSort(vetorDeElementosSemRepeticao);
                         break;
                     default:
                         SaiPrograma();
@@ -112,7 +135,8 @@ namespace OrdenacaoTP2
         private static void BubbleSort(int[] vetorRecebido)
         {
             ordenacao = new Ordenacao2();
-            ordenacao.BubbleSort(vetorDeElementosAleatorios);
+            //ordenacao.BubbleSort(vetorDeElementosAleatorios);
+            ordenacao.BubbleSort(vetorDeElementosSemRepeticao);
 
             Console.Clear();
         }
@@ -120,7 +144,8 @@ namespace OrdenacaoTP2
         private static void InsertionSort(int[] vetorRecebido)
         {
             ordenacao = new Ordenacao2();
-            ordenacao.InsertionSort(vetorDeElementosAleatorios);
+            //ordenacao.InsertionSort(vetorDeElementosAleatorios);
+            ordenacao.InsertionSort(vetorDeElementosSemRepeticao);
 
             Console.Clear();
         }
@@ -128,7 +153,8 @@ namespace OrdenacaoTP2
         private static void SelectionSort(int[] vetorRecebido)
         {
             ordenacao = new Ordenacao2();
-            ordenacao.SelectionSort(vetorDeElementosAleatorios);
+            //ordenacao.SelectionSort(vetorDeElementosAleatorios);
+            ordenacao.SelectionSort(vetorDeElementosSemRepeticao);
 
             Console.Clear();
         }
@@ -136,7 +162,8 @@ namespace OrdenacaoTP2
         private static void ShellSort(int[] vetorRecebido)
         {
             ordenacao = new Ordenacao2();
-            ordenacao.Shellsort(vetorDeElementosAleatorios);
+            //ordenacao.Shellsort(vetorDeElementosAleatorios);
+            ordenacao.Shellsort(vetorDeElementosSemRepeticao);
 
             Console.Clear();
         }
@@ -145,7 +172,8 @@ namespace OrdenacaoTP2
         {
             //ordenacao = new Ordenacao2();
             quicksort = new Quicksort();
-            quicksort.Ordena(vetorDeElementosAleatorios, 0, tamanhoVetor - 1);
+            //quicksort.Ordena(vetorDeElementosAleatorios, 0, tamanhoVetor - 1);
+            quicksort.Ordena(vetorDeElementosSemRepeticao, 0, tamanhoVetor - 1);
 
             Console.Clear();
         }
