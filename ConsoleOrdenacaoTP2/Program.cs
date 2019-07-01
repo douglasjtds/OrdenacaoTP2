@@ -30,6 +30,23 @@ namespace OrdenacaoTP2
             for (int i = 0; i < tamanhoVetor; i++)
             {
                 vetorDeElementosAleatorios[i] = numerosNoVetor.Next(0, tamanhoVetor);
+                //vetorDeElementosAleatorios.Contains() ///////////////////////////
+                /*try this: 
+                 * 
+                 * https://stackoverflow.com/questions/30014901/generating-random-numbers-without-repeating-c
+                 * 
+                 * 
+                 * 
+                 * List<int> listNumbers = new List<int>();
+                    int number;
+                    for (int i = 0; i < 6; i++)
+                    {
+                      do {
+                         number = rand.Next(1, 49);
+                      } while (listNumbers.Contains(number));
+                      listNumbers.Add(number);
+                    }
+                 */
             }
 
             //para imprimir o vetor desordenado
