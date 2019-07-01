@@ -10,8 +10,8 @@ namespace ConsoleOrdenacaoTP2.minhaImplementacao
 {
     public class Quicksort
     {
-        public static int numeroDeComparacoes = 0;
-        public static int numeroDeAtribuicoes = 0;
+        public static long numeroDeComparacoes = 0;
+        public static long numeroDeAtribuicoes = 0;
         public static Stopwatch stopWatch = new Stopwatch();
 
         public void Ordena(int[] vetor, int inicio, int fim)

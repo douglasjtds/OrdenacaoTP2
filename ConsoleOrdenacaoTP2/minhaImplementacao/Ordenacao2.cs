@@ -10,8 +10,8 @@ namespace ConsoleOrdenacaoTP2.minhaImplementacao
 {
     public class Ordenacao2 : IOrdenacao2
     {
-        public static int numeroDeComparacoes;
-        public static int numeroDeAtribuicoes;
+        public static long numeroDeComparacoes;
+        public static long numeroDeAtribuicoes;
 
         public void SelectionSort(int[] vetor)
         {
